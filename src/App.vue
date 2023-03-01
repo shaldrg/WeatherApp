@@ -43,7 +43,7 @@ export default {
     <button disabled class="dis" v-else>Введіть місто</button>
 
     <p class="error"> {{ error }}</p>
-    <p class="info" v-if="info != null">{{ info.main.temp }} degrees</p>
+    <p class="info" v-if="info != null">{{ info.main.temp }} ° </p>
 
 </div>
 </template>
@@ -58,40 +58,44 @@ body {
 }
 
 .info {
-    margin-top: 20px;
-    font-size: 30px;
+    margin-top: 70px;
+    font-size: 50px;
 }
 
 span {
-    color: crimson;
+    color: rgb(0, 238, 255);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     letter-spacing: 2px;
 }
 
 .wrapper {
     padding: 20px;
-    background: #46001c;
-    width: 500px;
-    height: 250px;
+    background: #062b44;
+    width: 700px;
+    height: 350px;
     border-radius: 40px;
     text-align: center;
     color: #fff;
     margin: 0 auto;
+    opacity: 0.8;
 
 }
 
 .wrapper h1 {
     margin-top: 20px;
+    font-size: 40px;
 
 }
 
 .wrapper h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 20px;
+    font-size: 14px;
+
 }
 
 .wrapper input {
-    margin-top: 30px;
+    margin-top: 50px;
     background: transparent;
     border: 0;
     border-bottom: 2px solid #110813;
@@ -105,8 +109,12 @@ input {
     color: #fff
 }
 
+.wrapper span {
+    font-size: 20px;
+}
+
 .wrapper input:focus {
-    border-bottom-color: #6e2e7d;
+    border-bottom-color: #a07008;
 }
 
 .wrapper button {
