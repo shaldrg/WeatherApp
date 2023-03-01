@@ -67,6 +67,7 @@ span {
     border-radius: 40px;
     text-align: center;
     color: #fff;
+    margin: 0 auto;
 
 }
 
@@ -117,5 +118,27 @@ input {
 .wrapper button:disabled {
     background: #746027;
     cursor: not-allowed;
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        width: 80%;
+        height: 300px;
+        font-size: 10px;
+    }
+
+    .submit {
+        margin-top: 30px;
+    }
+
+    .dis {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .wrapper {
+        scale: 1.5;
+    }
 }
 </style>
