@@ -7,6 +7,7 @@ export default {
             city: '',
             error: '',
             info: null
+
         }
     },
     methods: {
@@ -19,8 +20,16 @@ export default {
 
             axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=cbd1a4ee007f3f3c2a7e8adaabe58c5a`)
                 .then(res => (this.info = res.data))
+
+        },
+        isLetter(e) {
+            let char = String.fromCharCode(e.keyCode); // Get the character
+            if (/^[A-Za-z]+$/.test(char)) return true; // Match with regex 
+            else e.preventDefault(); // If not match, don't add to input text
         }
+
     }
+
 }
 </script> 
 
@@ -29,7 +38,7 @@ export default {
 
     <h1>Weather app</h1>
     <h2>Дізнатись погоду в <span>{{ city== '' ? "вашому місті" : city }}</span></h2>
-    <input v-model="city" type="text">
+    <input v-model="city" v-on:keypress="isLetter($event)" type="text">
     <button @click="getWeather" class="submit" v-if="city!=''">Отримати погоду</button>
     <button disabled class="dis" v-else>Введіть місто</button>
 
